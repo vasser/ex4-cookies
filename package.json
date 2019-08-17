@@ -1,0 +1,29 @@
+{
+  "name": "ex4-cookies",
+  "version": "1.0.0",
+  "description": "Cookies library for ex4 apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vasser/ex4-cookies.git"
+  },
+  "keywords": [
+    "cookies",
+    "node"
+  ],
+  "author": "Sergey Vasilkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vasser/ex4-cookies/issues"
+  },
+  "homepage": "https://github.com/vasser/ex4-cookies#readme",
+  "dependencies": {
+    "encrypt": "0.0.1",
+    "lodash": "4.17.15",
+    "mcrypt": "0.1.15",
+    "moment": "2.24.0"
+  }
+}
