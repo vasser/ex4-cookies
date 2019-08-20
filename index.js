@@ -55,8 +55,9 @@ module.exports = class Cookies {
   }
 
   encodeCookieValue(user, expireDate) {
-    const { username, email, company, status, personalDetails } = user
+    const { _id, username, email, company, status, personalDetails } = user
     const userData = {
+      _id,
       username,
       email,
       company,
