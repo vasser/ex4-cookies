@@ -30,18 +30,23 @@ module.exports = class Cookies {
 
   async isCookieValid(ctx) {
     const cookie = ctx.cookies.get(this.key)
-    const user = JSON.parse(this.decodeCookieValue(cookie))
+    try {
+      const user = JSON.parse(this.decodeCookieValue(cookie))
+      if (user.status === 'expired') return this.expiredPage
 
-    if (user.status === 'expired') return this.expiredPage
+      else if (new Date(user.expireDate) < new Date() && user.status === 'trial') {
+        return this.expiredPage
+      }
 
-    if (new Date(user.expireDate) < new Date() && user.status === 'trial') {
-      return this.expiredPage
+      else if (user.username && user.email && user.company) {
+        if (new Date(user.expireDate) > new Date()) return true
+      }
+      else {
+        throw new Error()
+      }
+    } catch (e) {
+      return this.loginPage  
     }
-
-    if (user.username && user.email && user.company) {
-      if (new Date(user.expireDate) > new Date()) return true
-    }
-    return this.loginPage
   }
 
   readCookie(ctx) {
