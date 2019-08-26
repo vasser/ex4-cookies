@@ -60,12 +60,13 @@ module.exports = class Cookies {
   }
 
   encodeCookieValue(user, expireDate) {
-    const { _id, username, email, company, status, personalDetails } = user
+    const { _id, username, email, company, status, personalDetails, role = 'client' } = user
     const userData = {
       _id,
       username,
       email,
       company,
+      role,gcoxx
       status,
       personalDetails,
       timestamp: new Date().getTime() / 1000,
