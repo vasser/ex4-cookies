@@ -66,7 +66,7 @@ module.exports = class Cookies {
       username,
       email,
       company,
-      role,gcoxx
+      role,
       status,
       personalDetails,
       timestamp: new Date().getTime() / 1000,
