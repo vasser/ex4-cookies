@@ -38,7 +38,7 @@ module.exports = class Cookies {
         return this.expiredPage
       }
 
-      else if (user.username && user.email && user.company) {
+      else if (user.status === 'active' && user.email) {
         if (new Date(user.expireDate) > new Date()) return true
       }
       else {
@@ -60,12 +60,11 @@ module.exports = class Cookies {
   }
 
   encodeCookieValue(user, expireDate) {
-    const { _id, username, email, company, status, personalDetails, role = 'client' } = user
+    const { _id, fullname = '', email, status, personalDetails, role = 'client' } = user
     const userData = {
       _id,
-      username,
+      fullname,
       email,
-      company,
       role,
       status,
       personalDetails,
