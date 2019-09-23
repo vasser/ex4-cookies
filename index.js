@@ -80,6 +80,7 @@ module.exports = class Cookies {
       email,
       role,
       status,
+      showOnboarding,
       personalDetails,
       timestamp: new Date().getTime() / 1000,
       expireDate
