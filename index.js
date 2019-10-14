@@ -1,3 +1,5 @@
+"use strict";
+
 const moment = require("moment");
 const { get } = require("lodash");
 const MCrypt = require("mcrypt").MCrypt;
@@ -38,8 +40,9 @@ module.exports = class Cookies {
     const cookie = ctx.cookies.get(this.key);
     try {
       const user = JSON.parse(this.decodeCookieValue(cookie));
-      if (user.status === "expired") return this.expiredPage;
-      else if (
+      if (user.status === "expired") {
+        return this.expiredPage;
+      } else if (
         new Date(user.expireDate) < new Date() &&
         user.status === "trial"
       ) {
