@@ -1,2 +1,2 @@
 # ex4-cookies
-Cookies library for ex4 apps
+Cookies, email and hashes library for ex4 apps

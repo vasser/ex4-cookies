@@ -1,7 +1,7 @@
 {
   "name": "ex4-cookies",
-  "version": "v1.0.9",
-  "description": "Cookies library for ex4 apps",
+  "version": "v1.1.0",
+  "description": "Cookies, email and hashes library for ex4 apps",
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=text-summary --reporter=lcov mocha test/**/*.test.js"
@@ -12,6 +12,8 @@
   },
   "keywords": [
     "cookies",
+    "email",
+    "hash",
     "node"
   ],
   "author": "Sergey Vasilkov",
