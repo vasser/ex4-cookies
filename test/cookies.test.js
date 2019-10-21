@@ -56,8 +56,8 @@ let ctx = {
 
 describe("Cookies package", () => {
   let clock, user;
-  const CookiesLib = require("../index");
-  const cookiesLib = new CookiesLib(defaultConfig);
+  const { Cookies } = require("../index");
+  const cookiesLib = new Cookies(defaultConfig);
 
   beforeEach(async () => {
     clock = sinon.useFakeTimers({ now: 1571087430854 });
