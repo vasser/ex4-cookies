@@ -1,0 +1,25 @@
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to Lendlord</mj-title>
+    <mj-include path="./components/attributes.mjml" />
+  </mj-head>
+  <mj-body background-color="#fff">
+
+    <mj-section background-color="#fff">
+      <mj-column>
+
+        <mj-include path="./components/header.mjml" />
+
+        <mj-text>
+          <h3>Hi __fullname__!</h3>
+          <p>Please find your weekly summary in the attachement.</p>
+          <p>Open summary in your browser: <a href="__report_link__">__report_link__</a></p>
+        </mj-text>
+        
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-include path="./components/footer.mjml" />
+  </mj-body>
+</mjml>

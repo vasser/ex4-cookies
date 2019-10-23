@@ -1,0 +1,5 @@
+<mj-attributes>
+    <mj-class name="footer" margin-left="10px" margin-right="10px" font-size="12px" color="#fff" align="center" />
+    <mj-class name="spacer" height="30px" />
+    <mj-all font-family="helvetica" font-size="20px" line-height="28px" />
+</mj-attributes>
