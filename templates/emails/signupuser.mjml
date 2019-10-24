@@ -3,22 +3,24 @@
     <mj-title>Welcome to Lendlord</mj-title>
     <mj-include path="./components/attributes.mjml" />
   </mj-head>
-  <mj-body background-color="#fff">
-
-    <mj-section>
+  <mj-body background-color="#ffffff">
+  <mj-wrapper background-color="#ffffff">
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column padding="0">
+        <mj-include path="./components/header.mjml" />                
+      </mj-column>
+      <mj-column padding="0"><mj-text padding-top="15px" align="right">Welcome to Lendlord</mj-text></mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding-top="10px">
       <mj-column>
-
-        <mj-include path="./components/header.mjml" />
-
+        <mj-divider mj-class="divider" />
         <mj-text>
           <h3>Hi __fullname__!</h3>
-          <p>Welcome to the <a href="__domain__">Lendlord</a> application. We're really pleased you're here.</p>
+          <p>Welcome to the Lendlord application. We're really pleased you're here.</p>
           <p>Your application account is "__email__".</p>
         </mj-text>
-        
-        <mj-spacer mj-class="spacer" />
 
-        <mj-button background-color="#ff9f08" color="#fff" href="__domain__/login">Login to Lendlord</mj-button>
+        <mj-button mj-class="button" href="__domain__/login">Login to Lendlord</mj-button>
         
         <mj-spacer mj-class="spacer" />
         

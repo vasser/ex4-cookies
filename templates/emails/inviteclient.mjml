@@ -3,22 +3,27 @@
     <mj-title>Invitation to Lendlord</mj-title>
     <mj-include path="./components/attributes.mjml" />
   </mj-head>
-  <mj-body background-color="#fff">
-
-    <mj-section>
+  <mj-body background-color="#ffffff">
+  <mj-wrapper background-color="#ffffff">
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column padding="0">
+        <mj-include path="./components/header.mjml" />                
+      </mj-column>
+      <mj-column padding="0"><mj-text padding-top="15px" align="right">Invitation to Lendlord</mj-text></mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding-top="10px">
       <mj-column>
-
-        <mj-include path="./components/header.mjml" />
-
+        <mj-divider mj-class="divider" />
         <mj-text font-size="24px"></mj-text>Invitation link to the Lendlord</mj-text>
 
-        <mj-text font-size="24px">Hi __fullname__!</mj-text>
-        
-        <mj-text>__brokername__ invited you to the <a href="__domain__">Lendlord.io</a>.</mj-text>
+        <mj-text>
+          <h3>Hi __fullname__!</h3>
+          <p>__brokername__ invited you to the Lendlord application.</p>
+        </mj-text>
         
         <mj-spacer mj-class="spacer" />
 
-        <mj-button background-color="#ff9f08" color="#fff" href="__domain__/signup?hash=__hash__">Proceed to registration</mj-button>
+        <mj-button mj-class="button" href="__domain__/signup?hash=__hash__">Proceed to registration</mj-button>
 
         <mj-spacer mj-class="spacer" />
       </mj-column>
