@@ -21,9 +21,9 @@
         </mj-text>
         <mj-text>
           <p>Wanted to remind you to update your details if something has changed:</p>
-          <p>To update your personal details click here: <a href="https://app.lendlord.io/personalDetails">Personal Details</a></p>
-          <p>To update portfolio details (rental income for instance) click here: <a href="https://app.lendlord.io/portfolioManagement">Portfolio Management</a></p>
-          <p>To update your monthly expenses and view your Yield & ROI click here: <a href="https://app.lendlord.io/profitAndLoss">P&L Analysis</a></p>
+          <p>To update your personal details click here: <a href="__domain__/personalDetails">Personal Details</a></p>
+          <p>To update portfolio details (rental income for instance) click here: <a href="__domain__/portfolioManagement">Portfolio Management</a></p>
+          <p>To update your monthly expenses and view your Yield & ROI click here: <a href="__domain__/profitAndLoss">P&L Analysis</a></p>
         </mj-text>
         <mj-spacer mj-class="spacer" />
       </mj-column>

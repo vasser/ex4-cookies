@@ -16,8 +16,8 @@
         <mj-divider mj-class="divider" />
         <mj-text>
           <h3>Hi __fullname__!</h3>
-          <p>Welcome to the Lendlord application. We're really pleased you're here.</p>
-          <p>Your application account is "__email__".</p>
+          <p>Welcome to Lendlord, the portfolio financing platform for landlords.</p>
+          <p>Manage, track and optimise your portfolio financing and start improving your portfolio profitability.</p>
         </mj-text>
 
         <mj-button mj-class="button" href="__domain__/login">Login to Lendlord</mj-button>
