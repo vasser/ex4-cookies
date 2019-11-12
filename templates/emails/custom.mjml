@@ -1,6 +1,6 @@
 <mjml>
   <mj-head>
-    <mj-title>Invitation to Lendlord</mj-title>
+    <mj-title>Lendlord notification</mj-title>
     <mj-include path="./components/attributes.mjml" />
   </mj-head>
   <mj-body background-color="#ffffff">
@@ -9,26 +9,22 @@
       <mj-column padding="0">
         <mj-include path="./components/header.mjml" />                
       </mj-column>
-      <mj-column padding="0"><mj-text padding-top="15px" align="right">Invitation to Lendlord</mj-text></mj-column>
+      <mj-column padding="0"><mj-text padding-top="15px" align="right"></mj-text></mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-top="10px">
       <mj-column>
         <mj-divider mj-class="divider" />
-        <mj-text font-size="24px"></mj-text>Invitation link to the Lendlord</mj-text>
-
         <mj-text>
-          <h3>Hi __fullname__!</h3>
-          <p>__brokername__ invited you to the Lendlord application.</p>
+          <h3>Hello __fullname__,</h3>
+          <mj-raw>
+              __html__
+          </mj-raw>
         </mj-text>
-        
-        <mj-spacer mj-class="spacer" />
-
-        <mj-button mj-class="button" href="__domain__/signup?hash=__hash__">Proceed to registration</mj-button>
 
         <mj-spacer mj-class="spacer" />
       </mj-column>
     </mj-section>
 
-    <mj-include path="./components/footer_no_unsubscribe.mjml" />
+    <mj-include path="./components/footer.mjml" />
   </mj-body>
 </mjml>

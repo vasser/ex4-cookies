@@ -1,0 +1,9 @@
+<mj-section padding="0 25px">
+    <mj-column>
+        <mj-text container-background-color="#344350" mj-class="footer">
+            This email was sent to <a href="mailto:__email__" style="color:#ffffff">__email__</a> by Lendlord.io<br>
+            <a href="https://www.lendlord.io/terms-and-conditions" style="color:#ffffff">Terms and Conditions</a> &middot; 
+            <a href="https://www.lendlord.io/privacy-policy" style="color:#ffffff">Privacy Policy</a>
+        </mj-text>
+    </mj-column>
+</mj-section>
