@@ -24,8 +24,8 @@ jobs:
       - checkout
       - run: npm install
       - run:
-        name: run eslint
-        command: npm run lint
+          name: run eslint
+          command: npm run lint
   test:
     working_directory: ~/ex4-cookies
     docker:
