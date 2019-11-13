@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  install:
+    working_directory: ~/ex4-cookies
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - restore_cache:
+          key: pricing-app-{{ arch }}-{{ checksum "package.json" }}
+      - run: 
+          name: install npm packages
+          command: npm install
+      - save_cache:
+          key: pricing-app-{{ arch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/ex4-cookies/node_modules
+      - run: 
+          name: run tests & code coverage
+          command: npm run test
+      - store_artifacts:
+          path: test-results.xml
+          prefix: tests
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
+      - store_test_results:
+          path: test-results.xml
