@@ -4,7 +4,8 @@
   "description": "Cookies, email and hashes library for ex4 apps",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=text-summary --reporter=lcov mocha test/**/*.test.js"
+    "test": "nyc --reporter=text-summary --reporter=lcov mocha test/**/*.test.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,12 @@
   },
   "devDependencies": {
     "chai": "4.2.0",
+    "eslint": "6.6.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
     "mocha": "6.2.1",
     "nyc": "14.1.1",
     "sinon": "7.5.0"
