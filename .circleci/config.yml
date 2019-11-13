@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  install:
+  build:
     working_directory: ~/ex4-cookies
     docker:
       - image: node:10
@@ -34,9 +34,7 @@ jobs:
           path: test-results.xml
 workflows:
   version: 2
-  install_and_test:
+  build_and_test:
     jobs:
-      - install
-      - test:
-        requires:
-          - install
+      - build
+      - test
