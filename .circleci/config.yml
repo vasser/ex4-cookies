@@ -1,3 +1,4 @@
+# Check if config is valid after changes: circleci config validate
 version: 2
 jobs:
   build:
@@ -15,6 +16,15 @@ jobs:
           key: pricing-app-{{ arch }}-{{ checksum "package.json" }}
           paths:
             - ~/ex4-cookies/node_modules
+  lint:
+    working_directory: ~/ex4-cookies
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - run:
+        name: run eslint
+        command: npm run lint
   test:
     working_directory: ~/ex4-cookies
     docker:
@@ -38,6 +48,8 @@ workflows:
   build_and_test:
     jobs:
       - build
+      - lint
       - test:
           requires:
             - build
+            - lint
