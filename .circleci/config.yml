@@ -21,6 +21,7 @@ jobs:
       - image: node:10
     steps:
       - checkout
+      - run: npm install
       - run: 
           name: run tests & code coverage
           command: npm run test
