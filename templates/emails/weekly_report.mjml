@@ -16,11 +16,12 @@
         <mj-divider mj-class="divider" />
         <mj-text>
           <h3>Hi __fullname__!</h3>
-          <p>Please find attached your weekly summary report.</p>
-          <p>To open the summary in your browser: <a href="__report_link__">__report_link__</a></p>
+          <p>Please review your weekly summary report here: <a href="__report_link__">__report_link__</a></p>
+          <p>In case you are not logged-in already, please use your email and the password you chose when registered 
+          (you can use the <a href="__domain__/forgot">forgot password</a> link in case you don't remember your password)</p>
         </mj-text>
         <mj-text>
-          <p>Wanted to remind you to update your details if something has changed:</p>
+          <p>If some data is missing or has changed recently, please update it as follows:</p>
           <p>To update your personal details click here: <a href="__domain__/personalDetails">Personal Details</a></p>
           <p>To update portfolio details (rental income for instance) click here: <a href="__domain__/portfolioManagement">Portfolio Management</a></p>
           <p>To update your monthly expenses and view your Yield & ROI click here: <a href="__domain__/profitAndLoss">P&L Analysis</a></p>
