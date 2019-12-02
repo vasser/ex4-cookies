@@ -1,0 +1,5 @@
+<mj-social align="left" padding-left="4%" color="#ffffff" padding="0" font-size="12px" mode="horizontal">
+    <mj-social-element mj-class="socIcon" name="facebook-noshare" href="https://www.facebook.com/profile.php?id=2146978505595115">Facebook</mj-social-element>
+    <mj-social-element mj-class="socIcon" name="twitter-noshare" href="https://twitter.com/Lendlord3">Twitter</mj-social-element>
+    <mj-social-element mj-class="socIcon" name="linkedin-noshare" href="https://www.linkedin.com/company/lendlord/">LinkedIn</mj-social-element>
+</mj-social>

@@ -2,36 +2,131 @@
   <mj-head>
     <mj-title>Weekly Report</mj-title>
     <mj-include path="./components/attributes.mjml" />
+    <mj-style>
+      p a {
+        color: orange;
+      }
+    </mj-style>
   </mj-head>
-  <mj-body background-color="#ffffff">
-  <mj-wrapper background-color="#ffffff">
-    <mj-section background-color="#ffffff" padding="0">
-      <mj-column padding="0">
-        <mj-include path="./components/header.mjml" />                
-      </mj-column>
-      <mj-column padding="0"><mj-text padding-top="15px" align="right">Weekly report</mj-text></mj-column>
-    </mj-section>
-    <mj-section background-color="#ffffff" padding-top="10px">
+  <mj-body background-color="#f0f0f0">
+  <mj-wrapper background-color="#f0f0f0">
+    <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
       <mj-column>
-        <mj-divider mj-class="divider" />
-        <mj-text>
-          <h3>Hi __fullname__!</h3>
-          <p>Please review your weekly summary report here: <a href="__report_link__">__report_link__</a></p>
-          <p>In case you are not logged-in already, please use your email and the password you chose when registered 
-          (you can use the <a href="__domain__/forgot">forgot password</a> link in case you don't remember your password)</p>
+        <mj-include path="./components/header-centered.mjml" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/weekly-banner.png" />
+        <!-- <mj-text font-size="24px" font-weight="600" padding-top="20px" container-background-color="orange" padding="0" align="center" color="#ffffff">
+          Keep Your Portfolio as Profitable as Possible
         </mj-text>
-        <mj-text>
-          <p>If some data is missing or has changed recently, please update it as follows:</p>
-          <p>To update your personal details click here: <a href="__domain__/personalDetails">Personal Details</a></p>
-          <p>To update portfolio details (rental income for instance) click here: <a href="__domain__/portfolioManagement">Portfolio Management</a></p>
-          <p>To update your monthly expenses and view your Yield & ROI click here: <a href="__domain__/profitAndLoss">P&L Analysis</a></p>
+        <mj-text padding-bottom="20px" container-background-color="orange" padding="0" align="center" color="#ffffff">
+          One place to manage, track and optimise your portfolio
         </mj-text>
-        <mj-text>
-          <p><i>This is a beta version of the weekly report email, <b>if the link does not work, please try to copy and paste it into your browser</b></i></p>
+        <mj-spacer mj-class="spacer" /> -->
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyText">Lendlord weekly summary: __weekly_date__</mj-text>
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader">Your Weekly Report</mj-text>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/3-12-19/your-weekly-report.jpg"></mj-image>
+        <mj-text mj-class="weeklyText">
+          <p>Please click here to review your summary report 
+          <a href="__report_link__"><b>Lendlord Summary Report __weekly_date__</b></a>.  
+          In case you are not logged-in, please use your email and the password
+          you chose when registered, or you can use the "forgot password" link in case 
+          you don't remember your password.<p>
+        </mj-text>
+        <mj-divider mj-class="dividerGrey" />
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader"> Reminders</mj-text>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/3-12-19/reminders.jpg"></mj-image>
+        <mj-text mj-class="weeklyText">
+          <p>Has something changed?<br>
+          Log in to the <a href="__domain__/login">platform</a> to update any relevant data that 
+          may have changed recently. For instance, some of your portfolio details (rental income, mortgage details, new property? etc.)</p>
+          <p>And another important reminder: It’s time to track your November expenses on all properties and view your Yield and ROI. Login to the <a href="__domain__/login">platform</a> and go to the P&L screen </p>
+        </mj-text>
+        <mj-divider mj-class="dividerGrey" />
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader">What's new?</mj-text>
+        <mj-text mj-class="weeklyText">
+          <p>We’ve released some great  features recently:<br />
+          - More insights (LTV, Yield and Cashflow insights)<br />
+          - The ability to order by portfolio columns<br />
+          - Easier ways to do actions on the property level<br />
+          - Product details information on the New Mortgage screen.</p>
+          <p>To see the full release notes click <a href="https://www.lendlord.io/post/new-version-release-nov-25">Here</a></p>
+        </mj-text>
+        <mj-divider mj-class="dividerGrey" />
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader">Our last blog post on the Property Reporter</mj-text>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/3-12-19/last-blog-post.jpg"></mj-image>
+        <mj-text mj-class="weeklyText">
+          <p>How do you know which lender is right for you?<br>
+          Landlords might assume that regulatory reforms have brought all lending offerings largely in line with each other, but this is not the case. Each lender has individual lending policies, criteria, stress tests and explaining their interest cover ratio is perhaps an article in its own right! The fact is that products, criteria and lending approaches are changing all the time, which is why landlords need to arm themselves with as much information as possible and have access to the right tools, solutions and advice to help ensure they can access the right kind of deals for them.</p>
+          <p>
+          Read the full article <a href="https://www.propertyreporter.co.uk/landlords/trying-to-find-the-right-lender-for-your-properties-let-technology-take-the-strain.html">HERE</a>
+          </p>
+        </mj-text>
+        <mj-divider mj-class="dividerGrey" />
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader">Top recommended posts of the week</mj-text>
+        <mj-text mj-class="weeklyTextBigger">
+          <p>
+          <a href="https://www.propertytribes.com/how-to-grow-portfolio-when-run-out-of-cash-t-127643861.html">How to grow portfolio when run out of cash?</a><br>
+          <a href="https://www.propertyreporter.co.uk/finance/house-prices-up-36-in-regeneration-areas.html">House prices up 3.6% in regeneration areas</a><br>
+          <a href="https://www.propertytribes.com/rental-market-trends-tracked-by-belvoir-t-127643899.html">Rental market trends tracked by Belvoir</a><br>
+          <a href="https://www.propertywire.com/news/renters-doubt-they-will-ever-own/">Renters doubt they will ever own</a>
+          </p>
+        </mj-text>
+        <mj-divider mj-class="dividerGrey" />
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyText" line-height="20px" font-size="14px">
+          <b>Images attribution:</b><br>
+          <a href="https://www.freepik.com/free-photos-vectors/background" coloe="">Background photo created by suksao - www.freepik.com</a><br>
+          <a href="https://www.freepik.com/free-photos-vectors/music">Music photo created by freepik - www.freepik.com</a><br>
+          <a href="https://www.freepik.com/free-photos-vectors/business">Business photo created by ijeab - www.freepik.com</a>
         </mj-text>
         <mj-spacer mj-class="spacer" />
       </mj-column>
     </mj-section>
+
     <mj-include path="./components/footer.mjml" />
     </mj-wrapper>
   </mj-body>

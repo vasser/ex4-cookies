@@ -1,8 +1,16 @@
 <mj-attributes>
-    <mj-class name="footer" margin-left="10px" margin-right="10px" font-size="12px" color="#fff" align="center" />
-    <mj-class name="spacer" height="30px" />
+    <mj-class name="footer" font-size="12px" color="#fff" />
+    <mj-class name="spacer" height="30px" background-color="#ffffff" />
     <mj-class name="button" background-color="#ff9f08" color="#fff" />
     <mj-class name="divider" border-width="1px" border-color="#ff9f08" />
+    <mj-class name="dividerGrey" border-width="1px" border-color="#757575" padding="4% 2%" />
+    <mj-class name="orange" color="#ff9f08" />
+    <mj-class name="weeklySection" background-color="#ffffff" padding="0 2%" />
+    <mj-class name="weeklyHeader" font-size="24px" font-weight="600" color="#757575" align="center" />
+    <mj-class name="weeklyText" padding="0 2%" font-size="16px" color="#757575" />
+    <mj-class name="weeklyTextBigger" padding="0 2%" font-size="18px" color="#757575" />
+    <mj-class name="weeklyImg" padding="2%" />
+    <mj-class name="socIcon" text-decoration="underline" text-padding="4px 10px 4px 0" />
     <mj-font name="Lato" href="https://fonts.googleapis.com/css?family=Lato" />
     <mj-all font-family="Lato, helvetica" color="#444444" font-size="20px" line-height="28px" />
 </mj-attributes>
