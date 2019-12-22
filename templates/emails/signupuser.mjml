@@ -2,19 +2,25 @@
   <mj-head>
     <mj-title>Welcome to Lendlord</mj-title>
     <mj-include path="./components/attributes.mjml" />
+    <mj-style>
+      p a {
+        color: orange;
+      }
+    </mj-style>
   </mj-head>
-  <mj-body background-color="#ffffff">
-  <mj-wrapper background-color="#ffffff">
-    <mj-section background-color="#ffffff" padding="0">
-      <mj-column padding="0">
-        <mj-include path="./components/header.mjml" />                
-      </mj-column>
-      <mj-column padding="0"><mj-text padding-top="15px" align="right">Welcome to Lendlord</mj-text></mj-column>
-    </mj-section>
-    <mj-section background-color="#ffffff" padding-top="10px">
+  <mj-body background-color="#f0f0f0">
+  <mj-wrapper background-color="#f0f0f0">
+    <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
       <mj-column>
-        <mj-divider mj-class="divider" />
-        <mj-text>
+        <mj-include path="./components/header-centered.mjml" />
+      </mj-column>
+    </mj-section>
+
+    <mj-include path="./components/lendlord-top-banner.mjml" />
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyText">
           <h3>Hi __fullname__!</h3>
           <p>Welcome to Lendlord, the portfolio financing platform for landlords.</p>
           <p>Manage, track and optimise your portfolio financing and start improving your portfolio profitability.</p>
@@ -24,7 +30,7 @@
         
         <mj-spacer mj-class="spacer" />
         
-        <mj-text font-size="16px" line-height="24px" color="#000">If you ever forget your password, you can reset it at <a href="__domain__/forgot" font-color="black">__domain__/forgot</a>
+        <mj-text mj-class="weeklyText">If you ever forget your password, you can reset it at <a href="__domain__/forgot" font-color="black">__domain__/forgot</a>
         </mj-text>
         
         <mj-spacer mj-class="spacer" />
@@ -32,5 +38,6 @@
     </mj-section>
 
     <mj-include path="./components/footer.mjml" />
+    </mj-wrapper>
   </mj-body>
 </mjml>

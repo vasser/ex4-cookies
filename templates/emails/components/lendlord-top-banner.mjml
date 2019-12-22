@@ -1,0 +1,12 @@
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/weekly-banner.png" />
+        <!-- <mj-text font-size="24px" font-weight="600" padding-top="20px" container-background-color="orange" padding="0" align="center" color="#ffffff">
+          Keep Your Portfolio as Profitable as Possible
+        </mj-text>
+        <mj-text padding-bottom="20px" container-background-color="orange" padding="0" align="center" color="#ffffff">
+          One place to manage, track and optimise your portfolio
+        </mj-text>
+        <mj-spacer mj-class="spacer" /> -->
+      </mj-column>
+    </mj-section>

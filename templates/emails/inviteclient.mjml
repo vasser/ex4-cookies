@@ -2,21 +2,27 @@
   <mj-head>
     <mj-title>Invitation to Lendlord</mj-title>
     <mj-include path="./components/attributes.mjml" />
+    <mj-style>
+      p a {
+        color: orange;
+      }
+    </mj-style>
   </mj-head>
-  <mj-body background-color="#ffffff">
-  <mj-wrapper background-color="#ffffff">
-    <mj-section background-color="#ffffff" padding="0">
-      <mj-column padding="0">
-        <mj-include path="./components/header.mjml" />                
-      </mj-column>
-      <mj-column padding="0"><mj-text padding-top="15px" align="right">Invitation to Lendlord</mj-text></mj-column>
-    </mj-section>
-    <mj-section background-color="#ffffff" padding-top="10px">
+  <mj-body background-color="#f0f0f0">
+  <mj-wrapper background-color="#f0f0f0">
+    <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
       <mj-column>
-        <mj-divider mj-class="divider" />
-        <mj-text font-size="24px"></mj-text>Invitation link to the Lendlord</mj-text>
+        <mj-include path="./components/header-centered.mjml" />
+      </mj-column>
+    </mj-section>
 
-        <mj-text>
+    <mj-include path="./components/lendlord-top-banner.mjml" />
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyHeader">Invitation link to the Lendlord</mj-text>
+
+        <mj-text mj-class="weeklyText">
           <h3>Hi __fullname__!</h3>
           <p>__brokername__ invited you to the Lendlord application.</p>
         </mj-text>
@@ -29,6 +35,7 @@
       </mj-column>
     </mj-section>
 
-    <mj-include path="./components/footer_no_unsubscribe.mjml" />
+    <mj-include path="./components/footer.mjml" />
+    </mj-wrapper>
   </mj-body>
 </mjml>
