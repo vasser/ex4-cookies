@@ -1,1 +1,11 @@
-<mj-image align="center" width="150px" href="__domain__" alt="Lendlord.io" padding-bottom="0" align="left" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/logo-150.png"></mj-image>
+<mj-section background-color="#ffffff" padding-top="20px" padding-bottom="10px">
+    <mj-column>
+        <mj-image align="center" width="150px" href="__domain__" alt="Lendlord.io" padding-bottom="0" align="left" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/logo-150.png"></mj-image>
+    </mj-column>
+</mj-section>
+
+<mj-section background-color="#fff">
+    <mj-column>
+        <mj-divider border-width="2px" border-color="#ccc" padding="0" />
+    </mj-column>
+</mj-section>

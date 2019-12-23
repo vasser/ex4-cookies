@@ -10,20 +10,13 @@
   </mj-head>
   <mj-body background-color="#f0f0f0">
   <mj-wrapper background-color="#f0f0f0">
-    <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
-      <mj-column>
-        <mj-include path="./components/header-centered.mjml" />
-      </mj-column>
-    </mj-section>
-
-    <mj-include path="./components/lendlord-top-banner.mjml" />
+    <mj-include path="./components/header-centered.mjml" />
 
     <mj-section mj-class="weeklySection">
       <mj-column>
         <mj-text mj-class="weeklyText">
           <h3>Hi __fullname__!</h3>
-          <p>Welcome to Lendlord, the portfolio financing platform for landlords.</p>
-          <p>Manage, track and optimise your portfolio financing and start improving your portfolio profitability.</p>
+          <p>Welcome to Lendlord, the online software that helps you manage, track and optimise your portfolio performance</p>
         </mj-text>
 
         <mj-button mj-class="button" href="__domain__/login">Login to Lendlord</mj-button>

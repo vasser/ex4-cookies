@@ -10,13 +10,7 @@
   </mj-head>
   <mj-body background-color="#f0f0f0">
   <mj-wrapper background-color="#f0f0f0">
-    <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
-      <mj-column>
-        <mj-include path="./components/header-centered.mjml" />
-      </mj-column>
-    </mj-section>
-
-    <mj-include path="./components/lendlord-top-banner.mjml" />
+    <mj-include path="./components/header-centered.mjml" />
 
     <mj-section mj-class="weeklySection">
       <mj-column>
@@ -26,7 +20,6 @@
               __html__
           </mj-raw>
         </mj-text>
-        <mj-divider mj-class="dividerGrey" />
         <mj-spacer mj-class="spacer" />
       </mj-column>
     </mj-section>

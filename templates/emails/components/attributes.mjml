@@ -1,6 +1,6 @@
 <mj-attributes>
     <mj-class name="footer" font-size="12px" color="#fff" />
-    <mj-class name="spacer" height="30px" background-color="#ffffff" />
+    <mj-class name="spacer" height="25px" background-color="#ffffff" />
     <mj-class name="button" background-color="#ff9f08" color="#fff" />
     <mj-class name="divider" border-width="1px" border-color="#ff9f08" />
     <mj-class name="dividerGrey" border-width="1px" border-color="#757575" padding="4% 2%" />
