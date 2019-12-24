@@ -12,11 +12,15 @@
   <mj-wrapper background-color="#f0f0f0">
     <mj-section background-color="#ffffff" padding-top="20px" padding-bottom="25px">
       <mj-column>
-        <mj-include path="./components/header-centered.mjml" />
+        <mj-image align="center" width="150px" href="__domain__" alt="Lendlord.io" padding-bottom="0" align="left" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/logo-150.png"></mj-image>
       </mj-column>
     </mj-section>
 
-    <mj-include path="./components/lendlord-top-banner.mjml" />
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-image mj-class="weeklyImg" src="https://lendlord-public.s3.eu-west-2.amazonaws.com/images/weekly/weekly-banner.png" />
+      </mj-column>
+    </mj-section>
 
     <mj-section mj-class="weeklySection">
       <mj-column>

@@ -14,7 +14,7 @@
 
     <mj-section mj-class="weeklySection">
       <mj-column>
-        <mj-text mj-class="weeklyHeader">Invitation link to the Lendlord</mj-text>
+        <mj-text mj-class="weeklyHeader">Invitation link to Lendlord</mj-text>
 
         <mj-text mj-class="weeklyText">
           <h3>Hi __fullname__!</h3>
