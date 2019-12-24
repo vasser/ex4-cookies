@@ -1,0 +1,35 @@
+<mjml>
+  <mj-head>
+    <mj-title>Lendlord notification</mj-title>
+    <mj-include path="./components/attributes.mjml" />
+    <mj-style>
+      p a {
+        color: orange;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f0f0f0">
+  <mj-wrapper background-color="#f0f0f0">
+    <mj-include path="./components/header-centered.mjml" />
+
+    <mj-section mj-class="weeklySection">
+      <mj-column>
+        <mj-text mj-class="weeklyText">
+          <h3>Hello __fullname__,</h3>
+          <p>Lendlord platform has identified that you have __ltv_properties__ with LTV below __ltv__%<p>
+          <p>Please login to your account to review the relevant properties:</p>
+        </mj-text>
+
+        <mj-button mj-class="button" href="__domain__/portfolioManagemen">Go to Portfolio Management</mj-button>
+        
+        <mj-spacer mj-class="spacer" />
+        
+        <mj-text mj-class="weeklyText">Lower LTV's may open better rate options or capital raising opportunities.</mj-text>
+        <mj-spacer mj-class="spacer" />
+      </mj-column>
+    </mj-section>
+
+    <mj-include path="./components/footer.mjml" />
+    </mj-wrapper>
+  </mj-body>
+</mjml>
