@@ -16,7 +16,7 @@
       <mj-column>
         <mj-text mj-class="weeklyText">
           <h3>Hello __fullname__,</h3>
-          <p>Lendlord platform has identified that you have __ltv_properties__ with LTV below __ltv__%<p>
+          __text__
           <p>Please login to your account to review the relevant properties:</p>
         </mj-text>
 
