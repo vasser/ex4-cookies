@@ -16,7 +16,7 @@
       <mj-column>
         <mj-text mj-class="weeklyText">
           <h3>Hello __fullname__,</h3>
-          __text__
+          <mj-raw>__text__</mj-raw>
           <p>Please login to your account to review the relevant properties:</p>
         </mj-text>
 

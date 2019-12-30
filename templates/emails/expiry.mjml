@@ -16,7 +16,7 @@
       <mj-column>
         <mj-text mj-class="weeklyText">
           <h3>Hello __fullname__,</h3>
-          __text1__
+          <mj-raw>__text1__</mj-raw>
           <p>Please login to your account to see the rate and the exact date:</p>
         </mj-text>
 
@@ -24,7 +24,9 @@
         
         <mj-spacer mj-class="spacer" />
         
-        <mj-text mj-class="weeklyText">__text2__</mj-text>
+        <mj-text mj-class="weeklyText">
+          <mj-raw>__text2__</mj-raw>
+        </mj-text>
         <mj-spacer mj-class="spacer" />
       </mj-column>
     </mj-section>
