@@ -1,0 +1,11 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": false
+    },
+    "include": [
+        "./index.ts",
+        "./lib/**/*"
+    ]
+}
