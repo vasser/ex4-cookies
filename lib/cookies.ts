@@ -61,14 +61,15 @@ class Cookies {
 
     isCookieValid(ctx: any): string | boolean | never {
         const cookie: string = ctx.cookies.get(this.key);
+        const now: number = Date.now();
         try {
             const user: User = JSON.parse(this.decodeCookieValue(cookie));
             if (user.status === 'expired') {
                 return this.expiredPage;
-            } else if (new Date(user.expireDate) < new Date() && user.status === 'trial') {
+            } else if (new Date(user.expireDate) < new Date(now) && user.status === 'trial') {
                 return this.expiredPage;
             } else if (user.status === 'active' && user.email) {
-                if (new Date(user.expireDate) > new Date()) return true;
+                if (new Date(user.expireDate) > new Date(now)) return true;
             } else {
                 throw new Error();
             }
@@ -97,7 +98,7 @@ class Cookies {
             status,
             showOnboarding,
             personalDetails,
-            timestamp: new Date().getTime() / 1000,
+            timestamp: Date.now() / 1000,
             expireDate,
         };
 

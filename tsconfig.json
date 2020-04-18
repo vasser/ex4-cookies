@@ -2,7 +2,8 @@
     "compileOnSave": true,
     "compilerOptions": {
         "target": "es5",
-        "noImplicitAny": false
+        "noImplicitAny": false,
+        "outDir": "./build"
     },
     "include": [
         "./index.ts",
