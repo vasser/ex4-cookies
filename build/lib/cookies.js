@@ -36,16 +36,17 @@ var Cookies = /** @class */ (function () {
     };
     Cookies.prototype.isCookieValid = function (ctx) {
         var cookie = ctx.cookies.get(this.key);
+        var now = Date.now();
         try {
             var user = JSON.parse(this.decodeCookieValue(cookie));
             if (user.status === 'expired') {
                 return this.expiredPage;
             }
-            else if (new Date(user.expireDate) < new Date() && user.status === 'trial') {
+            else if (new Date(user.expireDate) < new Date(now) && user.status === 'trial') {
                 return this.expiredPage;
             }
             else if (user.status === 'active' && user.email) {
-                if (new Date(user.expireDate) > new Date())
+                if (new Date(user.expireDate) > new Date(now))
                     return true;
             }
             else {
@@ -76,7 +77,7 @@ var Cookies = /** @class */ (function () {
             status: status,
             showOnboarding: showOnboarding,
             personalDetails: personalDetails,
-            timestamp: new Date().getTime() / 1000,
+            timestamp: Date.now() / 1000,
             expireDate: expireDate,
         };
         rijnDeal256Ecb.open(this.secretKey);

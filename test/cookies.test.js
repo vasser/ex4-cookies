@@ -1,5 +1,3 @@
-const sinon = require("sinon");
-const { expect } = require("chai");
 const { cloneDeep, get, set } = require("lodash");
 
 let defaultConfig = {
@@ -14,6 +12,9 @@ let defaultConfig = {
     expiredPage: "/expired"
   }
 };
+
+const Cookies = require('../build/lib/cookies');
+const cookiesLib = new Cookies(defaultConfig);
 
 const cookieKey = defaultConfig.cookies.key;
 
@@ -55,24 +56,27 @@ let ctx = {
 };
 
 describe("Cookies package", () => {
-  let clock, user;
-  const { Cookies } = require("../index");
-  const cookiesLib = new Cookies(defaultConfig);
+  let user;
+
+  beforeAll(() => {
+    jest
+      .spyOn(global.Date, 'now')
+      .mockImplementation(() => 1571087430854);
+  })
 
   beforeEach(async () => {
-    clock = sinon.useFakeTimers({ now: 1571087430854 });
     user = cloneDeep(defaultUser);
     ctx.cookies.set(cookieKey, null);
   });
 
-  afterEach(() => {
-    clock.restore();
-  });
+  afterAll(() => {
+    jest.restoreMocks();
+  })
 
   describe("Cookies actions", () => {
     it("Creates cookie", async () => {
       cookiesLib.createCookie(ctx, user);
-      expect(ctx.cookies.get(cookieKey)).to.be.eq(defaultCookie);
+      expect(ctx.cookies.get(cookieKey)).toEqual(defaultCookie);
     });
 
     it("Creates cookie and sets default values", async () => {
@@ -82,35 +86,35 @@ describe("Cookies package", () => {
       delete testUser["showOnboarding"];
       cookiesLib.createCookie(ctx, testUser);
       const cookie = cookiesLib.readCookie(ctx);
-      expect(cookie["fullname"]).to.be.empty;
-      expect(cookie["role"]).to.eq("client");
-      expect(cookie["showOnboarding"]).to.be.false;
+      expect(cookie["fullname"]).toBeEmpty;
+      expect(cookie["role"]).toEqual("client");
+      expect(cookie["showOnboarding"]).toBe(false);
     });
 
     it("Deletes cookie", () => {
       ctx.cookies.set(cookieKey, defaultCookie);
       cookiesLib.deleteCookie(ctx);
-      expect(ctx.cookies.get(cookieKey)).to.be.null;
+      expect(ctx.cookies.get(cookieKey)).toBeNull;
     });
 
     it("Reads valid cookie", () => {
       ctx.cookies.set(cookieKey, defaultCookie);
       const cookie = cookiesLib.readCookie(ctx);
-      expect(cookie).to.deep.eq(defaultCookieJson);
+      expect(cookie).toMatchObject(defaultCookieJson);
     });
 
     it("Returns false if reads invalid cookie", () => {
       ctx.cookies.set(cookieKey, "somebrokencookie==");
       const cookie = cookiesLib.readCookie(ctx);
-      expect(cookie).to.be.false;
+      expect(cookie).toBe(false);
     });
   });
 
-  describe("Is cookie valid", async () => {
+  describe("Is cookie valid", () => {
     it("Broken cookie returns login page", async () => {
       ctx.cookies.set(cookieKey, "somebrokencookie==");
       const result = await cookiesLib.isCookieValid(ctx);
-      expect(result).to.be.eq(defaultConfig.client.loginPage);
+      expect(result).toEqual(defaultConfig.client.loginPage);
     });
 
     it("Expired cookie returns expired page", async () => {
@@ -118,7 +122,7 @@ describe("Cookies package", () => {
       testUser["status"] = "expired";
       cookiesLib.createCookie(ctx, testUser);
       const result = await cookiesLib.isCookieValid(ctx);
-      expect(result).to.be.eq(defaultConfig.client.expiredPage);
+      expect(result).toEqual(defaultConfig.client.expiredPage);
     });
 
     it("In-active user returns login page", async () => {
@@ -126,13 +130,13 @@ describe("Cookies package", () => {
       testUser["status"] = "inactive";
       cookiesLib.createCookie(ctx, testUser);
       const result = await cookiesLib.isCookieValid(ctx);
-      expect(result).to.be.eq(defaultConfig.client.loginPage);
+      expect(result).toEqual(defaultConfig.client.loginPage);
     });
 
     it("Valid cookie returns true", async () => {
       cookiesLib.createCookie(ctx, user);
       const result = await cookiesLib.isCookieValid(ctx);
-      expect(result).to.be.true;
+      expect(result).toBe(true);
     });
   });
 });

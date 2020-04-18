@@ -8,24 +8,14 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: pricing-app-{{ arch }}-{{ checksum "package.json" }}
+          key: app-{{ arch }}-{{ checksum "package.json" }}
       - run: 
           name: install npm packages
           command: npm install
       - save_cache:
-          key: pricing-app-{{ arch }}-{{ checksum "package.json" }}
+          key: app-{{ arch }}-{{ checksum "package.json" }}
           paths:
             - ~/ex4-cookies/node_modules
-  lint:
-    working_directory: ~/ex4-cookies
-    docker:
-      - image: node:10
-    steps:
-      - checkout
-      - run: npm install
-      - run:
-          name: run eslint
-          command: npm run lint
   test:
     working_directory: ~/ex4-cookies
     docker:
@@ -34,7 +24,7 @@ jobs:
       - checkout
       - run: npm install
       - run: 
-          name: run tests & code coverage
+          name: run tests
           command: npm run test
       - store_artifacts:
           path: test-results.xml
@@ -49,7 +39,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - lint
       - test:
           requires:
             - build
