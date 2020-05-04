@@ -9,7 +9,6 @@ interface Config {
 
 interface User {
     _id: object;
-    userId: string;
     settings: UserSettings;
 }
 
@@ -47,7 +46,7 @@ class Email {
     async sendEmail(msg, msgData, user: User): Promise<void> {
         if (!user) throw new Error('User data is required');
         if (user.settings && !user.settings.emails.send) {
-            throw new Error(`User ${user.userId} unsubscribed`);
+            throw new Error(`User ${user._id} unsubscribed`);
         }
         this._normalizeMsg(msg, msgData, user);
         sgMail.setApiKey(this.apiKey);
@@ -72,7 +71,7 @@ class Email {
 
     _replacePlaceholders(msg, msgData: MessageData, user: User): void {
         msgData.__domain__ = this.domain;
-        msgData.__unsubscribe__ = `${this.domain}/unsubscribe/${user.userId}`;
+        msgData.__unsubscribe__ = `${this.domain}/unsubscribe/${user._id}`;
         if (!msgData.__email__) msgData.__email__ = msg.to;
 
         const re = new RegExp(Object.keys(msgData).join('|'), 'gi');
