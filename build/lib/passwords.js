@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -40,61 +40,63 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     var m = o[Symbol.asyncIterator], i;
     return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
     function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function (v) { resolve({ value: v, done: d }); }, reject); }
 };
 var fs = require("fs");
 /**
  * Check if password appears in the list of 1 000 000 common paswords in Internet
  * https://github.com/danielmiessler/SecLists/blob/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt
  */
-var isCommonPassword = function (pwd) { return __awaiter(void 0, void 0, void 0, function () {
-    var result, readStream, readStream_1, readStream_1_1, data, e_1_1;
-    var e_1, _a;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                result = false;
-                readStream = fs.createReadStream(__dirname + "/../sources/common-passwords-1000000.txt", {
-                    encoding: 'utf8',
-                });
-                _b.label = 1;
-            case 1:
-                _b.trys.push([1, 6, 7, 12]);
-                readStream_1 = __asyncValues(readStream);
-                _b.label = 2;
-            case 2: return [4 /*yield*/, readStream_1.next()];
-            case 3:
-                if (!(readStream_1_1 = _b.sent(), !readStream_1_1.done)) return [3 /*break*/, 5];
-                data = readStream_1_1.value;
-                data.toString()
-                    .split('\n')
-                    .forEach(function (p) {
-                    if (p === pwd) {
-                        result = true;
-                        readStream.close();
-                    }
-                });
-                _b.label = 4;
-            case 4: return [3 /*break*/, 2];
-            case 5: return [3 /*break*/, 12];
-            case 6:
-                e_1_1 = _b.sent();
-                e_1 = { error: e_1_1 };
-                return [3 /*break*/, 12];
-            case 7:
-                _b.trys.push([7, , 10, 11]);
-                if (!(readStream_1_1 && !readStream_1_1.done && (_a = readStream_1.return))) return [3 /*break*/, 9];
-                return [4 /*yield*/, _a.call(readStream_1)];
-            case 8:
-                _b.sent();
-                _b.label = 9;
-            case 9: return [3 /*break*/, 11];
-            case 10:
-                if (e_1) throw e_1.error;
-                return [7 /*endfinally*/];
-            case 11: return [7 /*endfinally*/];
-            case 12: return [2 /*return*/, result];
-        }
+var isCommonPassword = function (pwd) {
+    return __awaiter(void 0, void 0, void 0, function () {
+        var result, readStream, readStream_1, readStream_1_1, data, e_1_1;
+        var e_1, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    result = false;
+                    readStream = fs.createReadStream(__dirname + "/../../sources/common-passwords-1000000.txt", {
+                        encoding: 'utf8',
+                    });
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 6, 7, 12]);
+                    readStream_1 = __asyncValues(readStream);
+                    _b.label = 2;
+                case 2: return [4 /*yield*/, readStream_1.next()];
+                case 3:
+                    if (!(readStream_1_1 = _b.sent(), !readStream_1_1.done)) return [3 /*break*/, 5];
+                    data = readStream_1_1.value;
+                    data.toString()
+                        .split('\n')
+                        .forEach(function (p) {
+                            if (p === pwd) {
+                                result = true;
+                                readStream.close();
+                            }
+                        });
+                    _b.label = 4;
+                case 4: return [3 /*break*/, 2];
+                case 5: return [3 /*break*/, 12];
+                case 6:
+                    e_1_1 = _b.sent();
+                    e_1 = { error: e_1_1 };
+                    return [3 /*break*/, 12];
+                case 7:
+                    _b.trys.push([7, , 10, 11]);
+                    if (!(readStream_1_1 && !readStream_1_1.done && (_a = readStream_1.return))) return [3 /*break*/, 9];
+                    return [4 /*yield*/, _a.call(readStream_1)];
+                case 8:
+                    _b.sent();
+                    _b.label = 9;
+                case 9: return [3 /*break*/, 11];
+                case 10:
+                    if (e_1) throw e_1.error;
+                    return [7 /*endfinally*/];
+                case 11: return [7 /*endfinally*/];
+                case 12: return [2 /*return*/, result];
+            }
+        });
     });
-}); };
+};
 module.exports = { isCommonPassword: isCommonPassword };
