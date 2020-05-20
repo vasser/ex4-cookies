@@ -15,7 +15,7 @@
     <mj-section mj-class="weeklySection">
       <mj-column>
         <mj-text mj-class="weeklyTextBigger">
-          <h3>Hello __fullname__,</h3>
+          <h3>Hi __fullname__,</h3>
           <mj-raw>
               __html__
           </mj-raw>
