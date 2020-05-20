@@ -6,7 +6,7 @@ import fs = require('fs');
  */
 const isCommonPassword = async (pwd: string): Promise<boolean> => {
     let result = false;
-    const readStream = fs.createReadStream(`${__dirname}/../sources/common-passwords-1000000.txt`, {
+    const readStream = fs.createReadStream(`${__dirname}/../../sources/common-passwords-1000000.txt`, {
         encoding: 'utf8',
     });
 
