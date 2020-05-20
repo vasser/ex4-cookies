@@ -1,6 +1,6 @@
 {
   "name": "ex4-cookies",
-  "version": "v2.0.8",
+  "version": "v2.0.9",
   "description": "Cookies, email and hashes library for ex4 apps",
   "main": "./build/index.js",
   "scripts": {
