@@ -54,7 +54,7 @@ class Email {
     }
 
     getTemplate(name: string): string | null {
-        const path = `${__dirname}/../templates/emails/${name}.html`;
+        const path = `../templates/emails/${name}.html`;
         if (fs.existsSync(path)) {
             return fs.readFileSync(path, 'utf-8');
         }
