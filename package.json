@@ -1,50 +1,50 @@
 {
-  "name": "ex4-cookies",
-  "version": "v2.1.2",
-  "description": "Cookies, email and hashes library for ex4 apps",
-  "main": "./build/index.js",
-  "scripts": {
-    "test": "npm run lint && jest test/.",
-    "lint": "eslint --ext=.ts .",
-    "build": "tsc --build tsconfig.json"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vasser/ex4-cookies.git"
-  },
-  "keywords": [
-    "cookies",
-    "email",
-    "hash",
-    "node"
-  ],
-  "author": "Sergey Vasilkov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vasser/ex4-cookies/issues"
-  },
-  "homepage": "https://github.com/vasser/ex4-cookies#readme",
-  "dependencies": {
-    "@sendgrid/mail": "6.4.0",
-    "encrypt": "0.0.1",
-    "lodash": "4.17.15",
-    "mcrypt": "0.1.15",
-    "moment": "2.24.0",
-    "typescript": "3.7.5"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
-    "eslint": "^6.6.0",
-    "eslint-config-prettier": "6.9.0",
-    "eslint-config-standard": "14.1.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-node": "10.0.0",
-    "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "jest": "25.3.0",
-    "nyc": "14.1.1",
-    "prettier": "1.19.1"
-  }
+    "name": "ex4-cookies",
+    "version": "v2.1.3",
+    "description": "Cookies, email and hashes library for ex4 apps",
+    "main": "./build/index.js",
+    "scripts": {
+        "test": "npm run lint && jest test/.",
+        "lint": "eslint --ext=.ts .",
+        "build": "tsc --build tsconfig.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vasser/ex4-cookies.git"
+    },
+    "keywords": [
+        "cookies",
+        "email",
+        "hash",
+        "node"
+    ],
+    "author": "Sergey Vasilkov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vasser/ex4-cookies/issues"
+    },
+    "homepage": "https://github.com/vasser/ex4-cookies#readme",
+    "dependencies": {
+        "@sendgrid/mail": "6.4.0",
+        "encrypt": "0.0.1",
+        "lodash": "4.17.15",
+        "mcrypt": "0.1.15",
+        "moment": "2.24.0",
+        "typescript": "3.7.5"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.16.0",
+        "@typescript-eslint/parser": "^2.16.0",
+        "eslint": "^6.6.0",
+        "eslint-config-prettier": "6.9.0",
+        "eslint-config-standard": "14.1.0",
+        "eslint-plugin-import": "2.18.2",
+        "eslint-plugin-node": "10.0.0",
+        "eslint-plugin-prettier": "3.1.2",
+        "eslint-plugin-promise": "4.2.1",
+        "eslint-plugin-standard": "4.0.1",
+        "jest": "25.3.0",
+        "nyc": "14.1.1",
+        "prettier": "1.19.1"
+    }
 }
