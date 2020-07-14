@@ -19,6 +19,8 @@
               __html__
             </mj-raw>
           </mj-text>
+          <mj-button mj-class="button" href="__domain__/signup?redirectTo=dealAnalyzer">Create an Account</mj-button>
+
           <mj-spacer mj-class="spacer" />
         </mj-column>
       </mj-section>
