@@ -1,5 +1,5 @@
 # Check if config is valid after changes: circleci config validate
-version: 2
+version: 2.1
 jobs:
   build:
     working_directory: ~/ex4-cookies
@@ -16,6 +16,10 @@ jobs:
           key: app-{{ arch }}-{{ checksum "package.json" }}
           paths:
             - ~/ex4-cookies/node_modules
+      - snyk/scan:
+          fail-on-issues: false
+          monitor-on-build: true
+          severity-threshold: medimum
   test:
     working_directory: ~/ex4-cookies
     docker:
@@ -42,3 +46,5 @@ workflows:
       - test:
           requires:
             - build
+orbs:
+  snyk: snyk/snyk@0.0.3 
