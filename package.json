@@ -28,7 +28,7 @@
         "@sendgrid/mail": "6.4.0",
         "encrypt": "0.0.1",
         "lodash": "4.17.15",
-        "mcrypt": "0.1.15",
+        "mcrypt": "0.1.17",
         "moment": "2.24.0",
         "typescript": "3.7.5"
     },
