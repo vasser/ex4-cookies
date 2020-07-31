@@ -25,12 +25,12 @@
     },
     "homepage": "https://github.com/vasser/ex4-cookies#readme",
     "dependencies": {
-        "@sendgrid/mail": "6.4.0",
+        "@sendgrid/mail": "6.5.5",
         "encrypt": "0.0.1",
-        "lodash": "4.17.15",
+        "lodash": "4.17.19",
         "mcrypt": "0.1.15",
         "moment": "2.27.0",
-        "typescript": "3.7.5"
+        "typescript": "3.9.9"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.16.0",
