@@ -28,8 +28,8 @@
         "@sendgrid/mail": "6.5.5",
         "encrypt": "0.0.1",
         "lodash": "4.17.19",
-        "mcrypt": "0.1.15",
-        "moment": "2.24.0",
+        "mcrypt": "0.1.17",
+        "moment": "2.27.0",
         "typescript": "3.9.6"
     },
     "devDependencies": {
