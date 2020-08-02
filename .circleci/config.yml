@@ -1,21 +1,28 @@
 # Check if config is valid after changes: circleci config validate
-version: 2
+version: 2.1
+orbs:
+  snyk: snyk/snyk@0.0.10
 jobs:
   build:
-    working_directory: ~/ex4-cookies
     docker:
-      - image: node:10
+      - image: circleci/node:10
+    working_directory: ~/ex4-cookies
     steps:
       - checkout
       - restore_cache:
-          key: app-{{ arch }}-{{ checksum "package.json" }}
+          keys:
+            - v2-npm-cache-{{ checksum "package-lock.json" }}
       - run: 
           name: install npm packages
           command: npm install
       - save_cache:
-          key: app-{{ arch }}-{{ checksum "package.json" }}
+          key: v2-npm-cache-{{ checksum "package-lock.json" }}
           paths:
-            - ~/ex4-cookies/node_modules
+            - ~/.npm
+      - snyk/scan:
+          fail-on-issues: false
+          monitor-on-build: true
+          severity-threshold: medium
   test:
     working_directory: ~/ex4-cookies
     docker:
