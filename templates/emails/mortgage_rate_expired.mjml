@@ -17,7 +17,7 @@
           <mj-text mj-class="weeklyText">
             <h3>Hello __fullname__,</h3>
             <mj-raw>__text1__</mj-raw>
-            <p>Schedule a Zoom call with our mortgage broker partner, Windfall Limited to obtain a new discounted rate in a few minutes and earn 150 giveback points on completion:</p>
+            <p>Schedule a Zoom call with our mortgage broker partner, Windfall Limited to obtain a new discounted rate in a few minutes and earn 150 cashback points on completion:</p>
           </mj-text>
 
           <mj-button mj-class="button" href="https://calendly.com/arieh-3/30min">Schedule a Call</mj-button>
