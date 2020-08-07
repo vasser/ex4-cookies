@@ -30,7 +30,7 @@
         "lodash": "4.17.19",
         "mcrypt": "0.1.17",
         "moment": "2.27.0",
-        "typescript": "3.9.6"
+        "typescript": "3.9.7"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.16.0",
