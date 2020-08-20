@@ -1,0 +1,29 @@
+<mjml>
+  <mj-head>
+    <mj-title>Lendlord notification</mj-title>
+    <mj-include path="./components/attributes.mjml" />
+    <mj-style>
+      p a {
+        color: orange;
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f0f0f0">
+    <mj-wrapper background-color="#f0f0f0">
+      <mj-include path="./components/header-centered.mjml" />
+
+      <mj-section mj-class="weeklySection">
+        <mj-column>
+          <mj-text mj-class="weeklyTextBigger">
+            <mj-raw>
+              __html__
+            </mj-raw>
+          </mj-text>
+          <mj-spacer mj-class="spacer" />
+        </mj-column>
+      </mj-section>
+
+      <mj-include path="./components/footer_no_unsubscribe.mjml" />
+    </mj-wrapper>
+  </mj-body>
+</mjml>
