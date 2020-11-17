@@ -20,7 +20,7 @@
           <p>Beat your current premium:</p>
         </mj-text>
 
-        <mj-button mj-class="button" href="__domain__/dashboard">Get a Quote</mj-button>
+        <mj-button mj-class="button" href="https://landlords.alanboswell.com/stage1?utm_source=2046&utm_campaign=new-LLQ&utm_medium=webpage&utm_content=lendlord">Get a Quote</mj-button>
         
         <mj-spacer mj-class="spacer" />
         
