@@ -17,16 +17,13 @@
         <mj-text mj-class="weeklyText">
           <h3>Hello __fullname__,</h3>
           <mj-raw>__text1__</mj-raw>
-          <p>Login to your account, click on the notifications dropdown button on the right top side to track the payment/s or to send a reminder to your tenant:</p>
+          <p>__text2__</p>
         </mj-text>
 
         <mj-button mj-class="button" href="__domain__/dashboard">Take me to my account</mj-button>
         
         <mj-spacer mj-class="spacer" />
         
-        <mj-text mj-class="weeklyText">
-          <mj-raw>__text2__</mj-raw>
-        </mj-text>
         <mj-spacer mj-class="spacer" />
       </mj-column>
     </mj-section>
