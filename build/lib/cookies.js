@@ -1,26 +1,25 @@
 "use strict";
-var lodash_1 = require("lodash");
 var mcrypt_1 = require("mcrypt");
-var moment = require("moment");
+var luxon_1 = require("luxon");
 var rijnDeal256Ecb = new mcrypt_1.MCrypt('rijndael-256', 'ecb');
 var Cookies = /** @class */ (function () {
     function Cookies(config) {
-        if (config === void 0) { config = {}; }
-        this.maxAge = lodash_1.get(config, 'cookies.maxAge');
-        this.key = lodash_1.get(config, 'cookies.key');
-        this.domain = lodash_1.get(config, 'cookies.domain');
-        this.secure = lodash_1.get(config, 'cookies.secure', false);
-        this.sameSite = lodash_1.get(config, 'cookies.sameSite', false);
-        this.secretKey = lodash_1.get(config, 'cookies.secretKey');
-        this.loginPage = lodash_1.get(config, 'client.loginPage');
-        this.expiredPage = lodash_1.get(config, 'client.expiredPage');
+        var _a, _b;
+        this.maxAge = config.cookies.maxAge;
+        this.key = config.cookies.key;
+        this.domain = config.cookies.domain;
+        this.secure = ((_a = config.cookies) === null || _a === void 0 ? void 0 : _a.secure) || false;
+        this.sameSite = ((_b = config.cookies) === null || _b === void 0 ? void 0 : _b.sameSite) || false;
+        this.secretKey = config.cookies.secretKey;
+        this.loginPage = config.client.loginPage;
+        this.expiredPage = config.client.expiredPage;
     }
     Cookies.prototype.createCookie = function (ctx, user) {
         var expires = user.status === 'trial'
             ? user.endOfTrialPeriod
-            : moment()
-                .add(this.maxAge, 'milliseconds')
-                .toDate();
+            : luxon_1.DateTime.utc()
+                .plus({ milliseconds: this.maxAge })
+                .toString();
         var value = this.encodeCookieValue(user, expires);
         ctx.cookies.set(this.key, value, {
             maxAge: this.maxAge,

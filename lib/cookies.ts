@@ -1,20 +1,10 @@
-import { get } from 'lodash';
 import { MCrypt } from 'mcrypt';
-import moment = require('moment');
+import { DateTime } from 'luxon';
+import { DefaultContext } from 'koa';
+
+import { Config, UserCookies as User } from './types';
 
 const rijnDeal256Ecb = new MCrypt('rijndael-256', 'ecb');
-
-interface User {
-    _id: object;
-    fullname: string;
-    email: string;
-    role: string;
-    personalDetails: object;
-    status: string;
-    expireDate: string;
-    endOfTrialPeriod: string;
-    showOnboarding: boolean;
-}
 
 class Cookies {
     maxAge: number;
@@ -26,24 +16,24 @@ class Cookies {
     loginPage: string;
     expiredPage: string;
 
-    constructor(config: object = {}) {
-        this.maxAge = get(config, 'cookies.maxAge');
-        this.key = get(config, 'cookies.key');
-        this.domain = get(config, 'cookies.domain');
-        this.secure = get(config, 'cookies.secure', false);
-        this.sameSite = get(config, 'cookies.sameSite', false);
-        this.secretKey = get(config, 'cookies.secretKey');
-        this.loginPage = get(config, 'client.loginPage');
-        this.expiredPage = get(config, 'client.expiredPage');
+    constructor(config: Config) {
+        this.maxAge = config.cookies.maxAge;
+        this.key = config.cookies.key;
+        this.domain = config.cookies.domain;
+        this.secure = config.cookies?.secure || false;
+        this.sameSite = config.cookies?.sameSite || false;
+        this.secretKey = config.cookies.secretKey;
+        this.loginPage = config.client.loginPage;
+        this.expiredPage = config.client.expiredPage;
     }
 
     createCookie(ctx: any, user: User): void {
         const expires =
             user.status === 'trial'
                 ? user.endOfTrialPeriod
-                : moment()
-                      .add(this.maxAge, 'milliseconds')
-                      .toDate();
+                : DateTime.utc()
+                      .plus({ milliseconds: this.maxAge })
+                      .toString();
         const value = this.encodeCookieValue(user, expires);
         ctx.cookies.set(this.key, value, {
             maxAge: this.maxAge,
@@ -55,11 +45,11 @@ class Cookies {
         });
     }
 
-    deleteCookie(ctx: any): void {
+    deleteCookie(ctx: DefaultContext): void {
         ctx.cookies.set(this.key, null, { domain: this.domain });
     }
 
-    isCookieValid(ctx: any): string | boolean | never {
+    isCookieValid(ctx: DefaultContext): string | boolean | never {
         const cookie: string = ctx.cookies.get(this.key);
         const now: number = Date.now();
         try {
@@ -78,7 +68,7 @@ class Cookies {
         }
     }
 
-    readCookie(ctx: any): object | boolean {
+    readCookie(ctx: DefaultContext): object | boolean {
         const cookie: string = ctx.cookies.get(this.key);
         try {
             const value: object = JSON.parse(this.decodeCookieValue(cookie));
