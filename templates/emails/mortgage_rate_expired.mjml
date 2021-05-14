@@ -17,10 +17,10 @@
           <mj-text mj-class="weeklyText">
             <h3>Hello __fullname__,</h3>
             <mj-raw>__text1__</mj-raw>
-            <p>Schedule a Zoom call with our mortgage broker partner, Windfall Limited to obtain a new discounted rate in a few minutes and earn 250 cashback points on completion:</p>
+            <p>__p1__</p>
           </mj-text>
 
-          <mj-button mj-class="button" href="https://calendly.com/arieh-3/30min">Schedule a Call</mj-button>
+          <mj-button mj-class="button" href="https://calendly.com/arieh-3/rateswitch">Schedule a Call</mj-button>
 
           <mj-spacer mj-class="spacer" />
 
