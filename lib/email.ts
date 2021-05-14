@@ -1,38 +1,14 @@
+import { Config, UserEmail as User, MessageData } from './types';
+
 import sgMail = require('@sendgrid/mail');
 import fs = require('fs');
-
-interface Config {
-    apiKey: string;
-    domain: string;
-    fromEmail: string;
-}
-
-interface User {
-    _id: object;
-    settings: UserSettings;
-}
-
-interface UserSettings {
-    emails: EmailSettings;
-}
-
-interface EmailSettings {
-    send: boolean;
-}
-
-interface MessageData {
-    __domain__?: string;
-    __email__?: string;
-    __unsubscribe__?: string;
-    [propName: string]: any;
-}
 
 class Email {
     apiKey: string;
     domain: string;
     fromEmail: string;
 
-    constructor(config: Config) {
+    constructor(config: Config['email']) {
         this.apiKey = config.apiKey;
         this.domain = config.domain;
         this.fromEmail = config.fromEmail;

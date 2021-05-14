@@ -1,5 +1,4 @@
 "use strict";
-var lodash_1 = require("lodash");
 var mcrypt_1 = require("mcrypt");
 var rijnDeal256Ecb = new mcrypt_1.MCrypt('rijndael-256', 'ecb');
 var ENC = 'base64';
@@ -8,9 +7,7 @@ var Hash = /** @class */ (function () {
     }
     Hash.prototype.hashData = function (data, key) {
         rijnDeal256Ecb.open(key);
-        var dataToHash = data;
-        if (!lodash_1.isString(dataToHash))
-            dataToHash = JSON.stringify(dataToHash);
+        var dataToHash = typeof data === 'object' ? JSON.stringify(data) : data;
         return rijnDeal256Ecb.encrypt(dataToHash).toString(ENC);
     };
     Hash.prototype.deHashData = function (hash, key) {
